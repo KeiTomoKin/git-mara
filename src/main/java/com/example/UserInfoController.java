@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/info")
+@RequestMapping("/userInfo")
 public class UserInfoController {
 	@ModelAttribute
 	public User setUpForm() {
