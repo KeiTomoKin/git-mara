@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja"  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/calc/result}" method="post" >
+<p>
+<input type="text" name="num1">×
+<input type="text" name="num2">
+</p>
+<button>計算</button>
+</form>
+</body>
+</html>
