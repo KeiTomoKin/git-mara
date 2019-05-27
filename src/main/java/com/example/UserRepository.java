@@ -11,8 +11,7 @@ import org.springframework.stereotype.Repository;
 public class UserRepository {
 	@Autowired
 	private NamedParameterJdbcTemplate template;
-	private static final RowMapper<User> USER_ROW_MAPPER
-	=(rs,i)->{
+	private static final RowMapper<User> USER_ROW_MAPPER = (rs, i) -> {
 		User user = new User();
 		user.setId(rs.getInt("id"));
 		user.setName(rs.getString("name"));
@@ -20,11 +19,11 @@ public class UserRepository {
 		user.setAddress(rs.getString("address"));
 		return user;
 	};
-	
+
 	public User load(Integer id) {
-		String sql ="SELECT id,name,age,address FROM info WHERE id=:id";
+		String sql = "SELECT id,name,age,address FROM info WHERE id=:id";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 		User user = template.queryForObject(sql, param, USER_ROW_MAPPER);
-		return  user;
+		return user;
 	}
 }
