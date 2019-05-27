@@ -1,5 +1,6 @@
 package com.example;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,8 +20,10 @@ public class UserInfoController {
 	}
 
 	@RequestMapping("/output")
-	public String inputName(User user, Model model) {
+	public String outputName(UserForm userForm, Model model) {
+		User user = new User();
 		model.addAttribute("user", user);
+		BeanUtils.copyProperties(userForm, user);
 		return "output-user-info";
 	}
 }
