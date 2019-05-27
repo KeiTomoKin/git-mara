@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/Register}" method="post">
+		<label for="goods1">商品1：</label><input type="text" id="goods1" name="goods1"><br>
+		<label for="goods2">商品2：</label><input type="text" id="goods2" name="goods2"><br>
+		<label for="goods3">商品3：</label><input type="text" id="goods3" name="goods3"><br>
+		<button>購入</button>
+	</form>
+</body>
+</html>
